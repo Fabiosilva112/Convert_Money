@@ -22,9 +22,9 @@ function convertValues() {
       }).format(myInput / valueDolar)
    }
 
-   //deuro
+   //euro
 
-   if (mySelectOne.value == "dolar") {
+   if (mySelectOne.value == "euro") {
       valorConverted.innerHTML = new Intl.NumberFormat("nl-be", {
          style: "currency",
          currency: "EUR"
@@ -33,7 +33,7 @@ function convertValues() {
 
    //libra
 
-   if (mySelectOne.value == "dolar") {
+   if (mySelectOne.value == "libra") {
       valorConverted.innerHTML = new Intl.NumberFormat("en-GB", {
          style: "currency",
          currency: "GBP"
@@ -42,7 +42,7 @@ function convertValues() {
 
    //bitcoin
 
-   if (mySelectOne.value == "dolar") {
+   if (mySelectOne.value == "bitcoin") {
       valorConverted.innerHTML = new Intl.NumberFormat("es-sv", {
          style: "currency",
          currency: "BTC"
@@ -59,38 +59,8 @@ function convertValues() {
 
 }
 
-function MudarImg() {
-   if (mySelectOne.value == "dolar") {
-      let description = document.querySelector(".currencyTwo")
-      let imgDolar = document.querySelector(".imgMoneyTwo")
-      imgDolar.src = "./assets/img/estados-unidos.png"
-      description.innerHTML = "Dolar Americano"
-   }
-
-   if (mySelectOne.value == "euro") {
-      let imgDolar = document.querySelector(".imgMoneyTwo")
-      let description = document.querySelector(".currencyTwo")
-      imgDolar.src = "./assets/img/euro.png"
-      description.innerHTML = "Euro"
-   }
-
-   if (mySelectOne.value == "libra") {
-      let description = document.querySelector(".currencyTwo")
-      let imgDolar = document.querySelector(".imgMoneyTwo")
-      imgDolar.src = "./assets/img/libra 1.png"
-      description.innerHTML = "Libra"
-   }
-
-   if (mySelectOne.value == "bitcoin") {
-      let description = document.querySelector(".currencyTwo")
-      let imgDolar = document.querySelector(".imgMoneyTwo")
-      imgDolar.src = "./assets/img/bitcoin 1.png"
-      description.innerHTML = "Bitcoin"
-   }
-}
-
 function mudarMoeda() {
-   const myInput = document.querySelector(".input").value
+   let myInput = document.querySelector(".input").value
    const valorTheConvert = document.querySelector(".money") // valor à ser convertido
    const valorConverted = document.querySelector(".moneyTwo") // valor já convertido
 
@@ -112,6 +82,7 @@ function mudarMoeda() {
    // Euro
 
    if (mySelectOne.value == "euro") {
+
       valorConverted.innerHTML = new Intl.NumberFormat("nl-be", {
          style: "currency",
          currency: "EUR"
@@ -121,6 +92,8 @@ function mudarMoeda() {
          style: "currency",
          currency: "BRL"
       }).format(myInput)
+      
+      
    }
 
    // Libra
@@ -151,6 +124,48 @@ function mudarMoeda() {
       }).format(myInput)
    }
 }
+
+function MudarImg() {
+   if (mySelectOne.value == "dolar") {
+      let description = document.querySelector(".currencyTwo")
+      let imgDolar = document.querySelector(".imgMoneyTwo")
+      imgDolar.src = "./assets/img/estados-unidos.png"
+      description.innerHTML = "Dolar Americano"
+   }
+
+   if (mySelectOne.value == "euro") {
+      let imgDolar = document.querySelector(".imgMoneyTwo")
+      let description = document.querySelector(".currencyTwo")
+      imgDolar.src = "./assets/img/euro.png"
+      description.innerHTML = "Euro"
+   }
+
+   if (mySelectOne.value == "libra") {
+      let description = document.querySelector(".currencyTwo")
+      let imgDolar = document.querySelector(".imgMoneyTwo")
+      imgDolar.src = "./assets/img/libra 1.png"
+      description.innerHTML = "Libra"
+   }
+
+   if (mySelectOne.value == "bitcoin") {
+      let description = document.querySelector(".currencyTwo")
+      let imgDolar = document.querySelector(".imgMoneyTwo")
+      imgDolar.src = "./assets/img/bitcoin 1.png"
+      description.innerHTML = "Bitcoin"
+      
+   }
+}
+
+document.getElementById("limpar").addEventListener("change", function() {
+   learInputUrlNumber("entrada");
+ });
+
+function learInputUrlNumber (name){
+    let entradas = document.querySelectorAll("input[name='"+name+"']");
+    [].map.call(entradas, entrada => entrada.value = '');
+} 
+
+
 
 mySelectOne.addEventListener("change", mudarMoeda)
 
