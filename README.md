@@ -8,9 +8,17 @@
 
 <h2>Sobre</h2>
 
+<p>O Convert-Money é um simples conversor de moedas, onde nele podemos converter de REal para Dolar, Euro, Libra e Bitcoin. Ele contém um Design atraente de resposivo por esse motivo o usuário pode usar de forma simples</p>
+
 <p>Proejto feito com base em um Exercício do DevClub.</p>
-<p>Esse projeto me fez fixar alguns conceitos de html, css e JS.</p>
+<p>Esse projeto me fez fixar alguns conceitos de html, css e Js.</p>
 <p>Nele pude manipular a DOM de forma simples e prática.</p>
+
+<h2>Como usar</h2>
+
+<p>Passo 1: Escolha no segundo input para qual moeda você deseja converte o valor</p>
+<p>Passo 2: Coloque a ser convertido</p>
+<p>Passo 1: Click no botão converter</p>
 
 <h2>Tecnologias usadas</h2>
 
